@@ -19,7 +19,7 @@ function Guess({guess, answer, letters, setLetters}) {
         {
           guess ? classPre + guessResult[num].status : classPre
         }>{
-        guess ? guess.aGuess[num] : ""
+          guess ? guess.aGuess[num] : ""
           }
         </span>
 
