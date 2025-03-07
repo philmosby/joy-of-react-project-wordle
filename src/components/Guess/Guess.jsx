@@ -1,5 +1,6 @@
 import React from 'react';
-import * as helpers from '../../game-helpers.js'
+import * as helpers from '../../game-helpers.js';
+import {range} from '../../utils.js';
 
 function Guess({guess, answer, letters, setLetters}) {
   console.log("Guess: " + guess + "Answer: " + answer);
@@ -11,48 +12,21 @@ function Guess({guess, answer, letters, setLetters}) {
 
   return(
 
-    <p className="guess" key={Math.random()}>
-    <span className=
-    {
-      guess ? classPre + guessResult[0].status : classPre
-    }>{
-     guess ? guess.aGuess[0] : ""
-      }
-    </span>
+    <p className="guess">
 
-    <span className=
-    {
-      guess ? classPre + guessResult[1].status : classPre
-    }>{
-     guess ? guess.aGuess[1] : ""
-      }
-    </span>
+      {range(5).map((num)=>(
+        <span className=
+        {
+          guess ? classPre + guessResult[num].status : classPre
+        }>{
+        guess ? guess.aGuess[num] : ""
+          }
+        </span>
 
-    <span className=
-    {
-      guess ? classPre + guessResult[2].status : classPre
-    }>{
-     guess ? guess.aGuess[2] : ""
-      }
-    </span>
+      ))}
 
-    <span className=
-    {
-      guess ? classPre + guessResult[3].status : classPre
-    }>{
-     guess ? guess.aGuess[3] : ""
-      }
-    </span>
 
-    <span className=
-    {
-      guess ? classPre + guessResult[4].status : classPre
-    }>{
-     guess ? guess.aGuess[4] : ""
-      }
-    </span>
-
-  </p>
+    </p>
 
   );
 }

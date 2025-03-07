@@ -64,7 +64,7 @@ function TextInput({guess, setGuess, guesses, setGuesses, gameStatus, setGameSta
       // Now check answer
       if(guess == answer){
         setGameStatus("won");
-      }else if(guesses.length > 4){
+      }else if(nextGuesses.length == 6){
         setGameStatus("lost");
       }
       

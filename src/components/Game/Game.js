@@ -3,7 +3,8 @@ import React from 'react';
 import TextInput from '../TextInput';
 import GameBoard from '../GameBoard';
 import Keyboard from '../Keyboard';
-import ResultsBanner from '../ResultsBanner';
+import HappyBanner from '../HappyBanner';
+import SadBanner from '../SadBanner';
 import { sample } from '../../utils';
 import { WORDS } from '../../data';
 
@@ -95,7 +96,15 @@ function Game() {
 
     <TextInput guess={guess} setGuess={setGuess} guesses={guesses} setGuesses={setGuesses} gameStatus={gameStatus} setGameStatus={setGameStatus} answer={answer} letters={letters} setLetters={setLetters} ></TextInput>
 
-    <ResultsBanner gameStatus={gameStatus} guesses={guesses.length} answer={answer} resetGame={resetGame}></ResultsBanner>
+
+
+    {gameStatus === 'won' && (
+      <HappyBanner guesses={guesses.length} resetGame={resetGame}></HappyBanner>
+    )}
+
+    {gameStatus === 'lost' && (
+        <SadBanner answer={answer} resetGame={resetGame}></SadBanner>
+      )}
 
     <Keyboard letters={letters}></Keyboard>
 
