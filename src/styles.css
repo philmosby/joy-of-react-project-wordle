@@ -40,6 +40,41 @@ button {
   color: inherit;
 }
 
+.resetButton{
+  border: 1px solid #efefef;
+  padding: 1em; margin: 1em;
+}
+
+.keyboardSection{
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.keyboardKey{
+  display: inline-block;
+  position: relative;
+  padding: 1em;
+  border: 1px solid #333;
+  margin: 0.1em 0.21em;
+}
+
+.keyboardKey.correct {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
+.keyboardKey.incorrect {
+  background: var(--color-gray-300);
+  border-color: var(--color-gray-300);
+  color: white;
+}
+.keyboardKey.misplaced {
+  background: var(--color-warning);
+  border-color: var(--color-warning);
+  color: white;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -174,6 +209,7 @@ h1 {
   animation: slideUp 750ms cubic-bezier(0, 0.72, 0.24, 1.02);
   border-radius: 4px 4px 0px 0px;
   will-change: transform;
+  z-index: 3;
 }
 
 .happy.banner {
